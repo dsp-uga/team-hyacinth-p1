@@ -5,8 +5,27 @@ from pyspark.sql.session import SparkSession
 import sys
 
 sc = SparkContext.getOrCreate()
-spark = SparkSession(sc) 
+spark = SparkSession(sc)
 
+def get_files(files):
+    file_names = []
+    for f in files.iter_lines():
+        file_names.append()
+    return file_names
+
+def feature_extraction(train_path, test_path):
+    #feature extraction to extract the count of bytes from the files
+    
+    train_file = requests.get(train_path, stream=True)
+    test_file = requests.get(test_path, stream=True)
+    
+    train_files = get_files(train_file)
+    test_files = get_files(test_file)
+    
+    train_files_len = len(train_files)
+    test_files_len = len(test_files)
+    
+    
 def add_labels(y_path):
     y_train_file = requests.get(y_path, stream=True)
     y_train = []
@@ -31,6 +50,9 @@ def main():
         
     #Getting list of y labels
     y_train = add_labels(y_path)
-    print(y_train)
+    
+    #feature-extraction
+    X_train, X_test = feature_extraction(X_train_path, X_test_path)
+    #print(y_train)
 if __name__ == "__main__":
     main()
