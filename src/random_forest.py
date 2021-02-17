@@ -7,6 +7,7 @@ import sys
 sc = SparkContext.getOrCreate()
 spark = SparkSession(sc)
 
+
 def byte_feature_extraction(lists, file, feature, track, value):
 
         for hexa_file_num, f in enumerate(file):
@@ -64,8 +65,10 @@ def get_files(files):
 def add_labels(y_path):
     y_train_file = requests.get(y_path, stream=True)
     y_train = []
-    for hexa_file in y_train_file.iter_hexa_files():
-        y_train.append(int(hexa_file) - 1)
+
+    for line in y_train_file.iter_lines():
+        y_train.append(int(line) - 1)
+
     return y_train
 
 def main():
@@ -73,7 +76,9 @@ def main():
     dataset = sys.argv[1]
     num_of_trees = 40
     depth = 23
-    max_val = 1000   
+
+    max_val = 1000  
+
     if dataset == 'large':
         X_train_path = 'https://storage.googleapis.com/uga-dsp/project1/files/X_train.txt'
         X_test_path = 'https://storage.googleapis.com/uga-dsp/project1/files/X_test.txt'
@@ -87,7 +92,9 @@ def main():
     y_train = add_labels(y_path)
     
     #feature-extraction
+
     X_train, X_test = feature_extraction(X_train_path, X_test_path, max_val)
     #print(y_train)
 if __name__ == "__main__":
     main()
+
