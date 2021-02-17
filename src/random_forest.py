@@ -4,6 +4,7 @@ from pyspark import SparkConf
 from pyspark.sql.session import SparkSession
 import sys
 
+# creating the spark context
 sc = SparkContext.getOrCreate()
 spark = SparkSession(sc)
 
