@@ -20,6 +20,9 @@ def byte_feature_extraction(lists, file, feature, track, value):
             hexa_file = hexa_file.split()
             
             for byte in hexa_file[1:]:
+                if '?' in byte:
+                    continue
+                else:
                     if byte not in track:
                         if value == 1:
                             continue
@@ -72,6 +75,7 @@ def add_labels(y_path):
 
     return y_train
 
+
 def main():
 
     dataset = sys.argv[1]
@@ -93,8 +97,9 @@ def main():
     y_train = add_labels(y_path)
     
     #feature-extraction
-
     X_train, X_test = feature_extraction(X_train_path, X_test_path, max_val)
+
+
     #print(y_train)
 if __name__ == "__main__":
     main()
