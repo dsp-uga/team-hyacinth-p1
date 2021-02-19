@@ -17,7 +17,7 @@ Prerequisites:
 Running the tests:
 Execute the random forest classifier. The data is automatically imported from the link. 
 
-$ python .py large
+$ python random_forest.py large
 
 Dataset - s for small dataset, l for large dataset. Default: l.
 
