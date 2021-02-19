@@ -19,17 +19,18 @@ Execute the random forest classifier. The data is automatically imported from th
 
 $ python random_forest.py large
 
-Dataset - s for small dataset, l for large dataset. Default: l.
+Dataset large for large dataset
 
-Features - 11 for byte and header counts, 10 for only byte counts, 01 for only header counts. Default: 11
+Features - 11 for both byte and header counts, 10 for only byte counts, 01 for only header counts. Default: 11
 
-Number of trees - Any integer larger than 1. Default: 40
+Number of trees - Any integer greater than 1. Default: 40
 
-Maximum Depth - Any integer between 1 and 30 (inclusive). Default: 23
+Max Depth - Any integer between 1 and 30. Default: 23
 
-The prediction will be saved to disk in the current directory and named submit<Number of trees><Maximum depth>.txt By default it will be saved as submit4023.txt
+The prediction will be saved to disk in the current directory and named result.txt.
 
-Authors (Ordered alphabetically)
+# Authors 
+(Ordered alphabetically)
 
 Aishwarya 
 Ankit
