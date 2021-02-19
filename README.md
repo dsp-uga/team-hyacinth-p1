@@ -15,7 +15,7 @@ Prerequisites:
 . Anaconda
 
 Running the tests:
-Execute the random forest classifier. The data is automatically imported from the link. 
+Execute the random forest classifier. The data is automatically imported from the link.
 
 $ python random_forest.py large
 
@@ -29,12 +29,13 @@ Max Depth - Any integer between 1 and 30. Default: 23
 
 The prediction will be saved to disk in the current directory and named result.txt.
 
-# Authors 
+# Authors
+
 (Ordered alphabetically)
 
-Aishwarya 
-Ankit
-Divya
++ Aishwarya
++ Ankit
++ Divya
 
 License
 This project is licensed under the MIT License
