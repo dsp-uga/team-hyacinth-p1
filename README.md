@@ -21,11 +21,11 @@ $ python random_forest.py large
 
 Dataset large for large dataset
 
-Features - 11 for both byte and header counts, 10 for only byte counts, 01 for only header counts. Default: 11
+Features - byte count: 10
 
-Number of trees - Any integer greater than 1. Default: 40
+Number of trees - 40
 
-Max Depth - Any integer between 1 and 30. Default: 23
+Depth - 23
 
 The prediction will be saved to disk in the current directory and named result.txt.
 
